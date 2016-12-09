@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-    entry: './app',
+    entry: './app/index.jsx',
     output: {
         path: path.resolve(__dirname, './wwwroot/js'),
         filename: 'search.bundle.js'
