@@ -21659,10 +21659,10 @@ module.exports = traverseAllChildren;
 
 
 
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'h1',
     null,
-    'Hello from Rect1'
+    'Hello from React!'
 ), document.getElementById('search'));
 
 /***/ }
