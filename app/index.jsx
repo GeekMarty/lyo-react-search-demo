@@ -1,7 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Router, Route, browserHistory } from 'react-router'
 
-ReactDOM.render(
-    <h1>Hello from React!</h1>,
+class HelloWorld extends React.Component {
+    render() {
+        return (
+            <h1>Hello from React Component!</h1>
+        );
+    }
+}
+
+render(
+    <Router history={browserHistory}>
+        <Route path="/search" component={HelloWorld}>            
+        </Route>
+    </Router>, 
     document.getElementById('search')
 );
