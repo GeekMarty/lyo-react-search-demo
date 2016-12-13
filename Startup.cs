@@ -25,6 +25,7 @@ namespace WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddRouting((routingOptions) => { routingOptions.LowercaseUrls = true; });
             services.AddMvc();            
         }
 
