@@ -13099,7 +13099,7 @@ var QueryForm = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (QueryForm.__proto__ || Object.getPrototypeOf(QueryForm)).call(this, props));
 
         _this.state = {
-            value: ''
+            value: props.action
         };
 
         _this.handleChange = _this.handleChange.bind(_this);
@@ -13110,15 +13110,14 @@ var QueryForm = function (_React$Component) {
     _createClass(QueryForm, [{
         key: 'handleChange',
         value: function handleChange(event) {
-            //console.log(event);
             this.setState({ value: event.target.value });
         }
     }, {
         key: 'handleSubmit',
         value: function handleSubmit(event) {
-            //console.log(event);
-
             __WEBPACK_IMPORTED_MODULE_1_react_router__["browserHistory"].push('/search?q=' + this.state.value);
+
+            //this.props.changeQuery(this.state.value);
 
             event.preventDefault();
             event.stopPropagation();
@@ -13186,6 +13185,11 @@ var QueryResult = function (_React$Component) {
                     'pre',
                     null,
                     JSON.stringify(this.state.query, null, 2)
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'pre',
+                    null,
+                    JSON.stringify(this.props.action, null, 2)
                 )
             );
         }
@@ -28803,7 +28807,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var store = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_redux__["b" /* createStore */])(function () {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { act: 'none' };
     var action = arguments[1];
-    return state;
+    return action.payload ? Object.assign({}, state, { act: action.payload }) : state;
 });
 
 var HelloWorld = function (_React$Component) {
@@ -28821,8 +28825,8 @@ var HelloWorld = function (_React$Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_QueryForm__["a" /* default */], null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_QueryResult__["a" /* default */], null)
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_QueryForm__["a" /* default */], { action: store.getState().act }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_QueryResult__["a" /* default */], { action: store.getState().act })
             );
         }
     }]);

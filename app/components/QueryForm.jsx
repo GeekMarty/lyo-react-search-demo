@@ -6,7 +6,7 @@ class QueryForm extends React.Component {
         super(props);
 
         this.state = {
-            value: ''
+            value: props.action
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -14,15 +14,14 @@ class QueryForm extends React.Component {
     }
 
     handleChange(event) {
-        //console.log(event);
         this.setState({value: event.target.value});
     }
 
     handleSubmit(event) {
-        //console.log(event);
-        
         browserHistory.push('/search?q=' + this.state.value);
 
+        //this.props.changeQuery(this.state.value);
+        
         event.preventDefault();
         event.stopPropagation();
     }

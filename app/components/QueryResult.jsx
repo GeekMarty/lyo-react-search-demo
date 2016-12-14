@@ -14,6 +14,9 @@ class QueryResult extends React.Component {
                 <pre>
                 { JSON.stringify(this.state.query, null, 2)  }
                 </pre>
+                <pre>
+                    { JSON.stringify(this.props.action, null, 2)  }
+                </pre>
             </div>
         );
     }
