@@ -38,4 +38,8 @@ class QueryForm extends React.Component {
     }
 }
 
+QueryForm.propTypes = {
+    action: React.PropTypes.string.isRequired,
+}
+
 export default QueryForm;

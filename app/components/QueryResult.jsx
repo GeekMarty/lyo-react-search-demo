@@ -22,4 +22,8 @@ class QueryResult extends React.Component {
     }
 }
 
+QueryResult.propTypes = {
+    action: React.PropTypes.string.isRequired,
+}
+
 export default QueryResult;
