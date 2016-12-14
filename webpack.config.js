@@ -24,5 +24,11 @@ module.exports = {
             path.resolve(__dirname, 'app')
         ],
         extensions: ['.js', '.json', '.jsx']
-    }    
+    },
+    devtool: 'eval',
+    watch: true,
+    watchOptions: {
+        aggregateTimeout: 300
+    },
+    externals: 'jQuery'
 };
