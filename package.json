@@ -18,7 +18,7 @@
     "eslint": "^3.12.1",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-react": "^6.8.0",
-    "webpack": ">2.1.0-beta"
+    "webpack": "beta"
   },
   "scripts": {
     "pack": "webpack"
