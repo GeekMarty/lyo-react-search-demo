@@ -1,5 +1,4 @@
-import React from 'react';
-import { browserHistory } from 'react-router';
+import React, { PropTypes } from 'react';
 
 class QueryForm extends React.Component {
     constructor(props) {
@@ -18,12 +17,11 @@ class QueryForm extends React.Component {
     }
 
     handleSubmit(event) {
-        browserHistory.push('/search?q=' + this.state.value);
-
-        //this.props.changeQuery(this.state.value);
-        
         event.preventDefault();
         event.stopPropagation();
+
+        // invoke callback when form is submitted
+        this.props.changeQuery(this.state.value);
     }
 
     render() {
@@ -39,7 +37,8 @@ class QueryForm extends React.Component {
 }
 
 QueryForm.propTypes = {
-    action: React.PropTypes.string.isRequired,
-}
+    action: PropTypes.string.isRequired,
+    changeQuery: PropTypes.func.isRequired
+};
 
 export default QueryForm;

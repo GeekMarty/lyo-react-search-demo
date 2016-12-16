@@ -11,9 +11,11 @@ class QueryResult extends React.Component {
     render() {
         return (
             <div>
+                <h3>Query</h3>
                 <pre>
                 { JSON.stringify(this.state.query, null, 2)  }
                 </pre>
+                <h3>State</h3>
                 <pre>
                     { JSON.stringify(this.props.action, null, 2)  }
                 </pre>
