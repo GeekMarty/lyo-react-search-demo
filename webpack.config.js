@@ -17,11 +17,11 @@ module.exports = {
                     {
                         loader: 'babel-loader',
                         options: {
-                            "presets": [
-                                ["es2015", { "modules": false }],
-                                "react"
+                            presets: [
+                                ['es2015', { modules: false }],
+                                'react'
                             ],
-                            "plugins": ["transform-object-rest-spread"]
+                            plugins: ['transform-object-rest-spread']
                         }
                     }
                 ]
@@ -47,6 +47,9 @@ module.exports = {
     watch: true,
     watchOptions: {
         aggregateTimeout: 300
+    },
+    performance: {
+        hints: false
     },
     externals: 'jQuery'
 };
