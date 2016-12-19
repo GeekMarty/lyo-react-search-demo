@@ -13,7 +13,26 @@ module.exports = {
                 include: [
                     path.resolve(__dirname, 'app')
                 ],
-                use: [ 'babel-loader', 'eslint-loader']
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            "presets": [
+                                ["es2015", { "modules": false }],
+                                "react"
+                            ],
+                            "plugins": ["transform-object-rest-spread"]
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.jsx?$/,
+                include: [
+                    path.resolve(__dirname, 'app')
+                ],
+                use: ['eslint-loader'],
+                enforce: 'pre'
             }
         ]
     },

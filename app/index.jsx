@@ -8,7 +8,7 @@ import Search from './components/Search';
 
 //import * as actions from './actions';
 
-let store = createStore((state = { act: 'none' }, action) => { return action.payload ? Object.assign({}, state, { act: action.payload }) : state; });
+let store = createStore((state = { act: 'none' }, action) => { return action.payload ? { ...state, act: action.payload } : state; });
 
 render(
     <Provider store={store}>
