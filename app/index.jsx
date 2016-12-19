@@ -2,13 +2,13 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
-import { createStore/*, bindActionCreators*/ } from 'redux';
+import { createStore } from 'redux';
+
+import reducers from './reducers';
 
 import Search from './components/Search';
 
-//import * as actions from './actions';
-
-let store = createStore((state = { act: 'none' }, action) => { return action.payload ? { ...state, act: action.payload } : state; });
+let store = createStore(reducers);
 
 render(
     <Provider store={store}>

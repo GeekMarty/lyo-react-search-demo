@@ -13,14 +13,13 @@ const changeQueryString = (value) => {
 
 const mapStateToProps = (state) => {
     return {
-        action: state.act
+        action: state.search.act
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         changeQuery: (val) => {
-            //console.log('dispatched');
             changeQueryString(val);
             dispatch(changeQuery(val));
         }
