@@ -8,13 +8,11 @@ import QueryForm from './QueryForm';
 import QueryResult from './QueryResult';
 
 const changeQueryString = (value) => {
-    browserHistory.push('/search?q=' + value);
-}
+    browserHistory.push(`/search?q=${value}`);
+};
 
 const mapStateToProps = (state) => {
-    return {
-        action: state.search.act
-    };
+    return { action: state.search.act };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -24,14 +22,16 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(changeQuery(val));
         }
     };
-}
+};
 
 class Search extends React.Component {
     render() {
         return (
             <div>
-                <QueryForm action={this.props.action} changeQuery={this.props.changeQuery} />
-                <QueryResult action={this.props.action}  />
+                <QueryForm action={this.props.action}
+                    changeQuery={this.props.changeQuery}
+                />
+                <QueryResult action={this.props.action} />
             </div>
         );
     }

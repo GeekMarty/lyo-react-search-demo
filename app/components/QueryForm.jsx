@@ -1,37 +1,44 @@
+/* eslint react/no-set-state: "off" */
+
 import React, { PropTypes } from 'react';
 
 class QueryForm extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            value: props.action
-        };
+        this.state = { value: props.action };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({ value: event.target.value });
     }
 
     handleSubmit(event) {
         event.preventDefault();
         event.stopPropagation();
 
-        // invoke callback when form is submitted
+        // Invoke callback when form is submitted
         this.props.changeQuery(this.state.value);
     }
 
     render() {
         return (
-        <form onSubmit={this.handleSubmit}>
-            <label>
-                <input type="text" value={this.state.value} onChange={this.handleChange}/>
-            </label>
-            <input type="submit" value="Search now" />
-        </form>
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    <input
+                        onChange={this.handleChange}
+                        type="text"
+                        value={this.state.value}
+                    />
+                </label>
+                <input
+                    type="submit"
+                    value="Search now"
+                />
+            </form>
         );
     }
 }
