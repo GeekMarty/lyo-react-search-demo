@@ -8,7 +8,7 @@ import QueryForm from './QueryForm.jsx';
 import QueryResult from './QueryResult.jsx';
 
 const changeQueryString = (value) => {
-    browserHistory.push('/search?q=' + { value });
+    browserHistory.push('/search?q=' + value);
 };
 
 const mapStateToProps = (state) => {
