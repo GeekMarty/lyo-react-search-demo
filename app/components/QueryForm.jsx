@@ -2,7 +2,7 @@
 
 import React, { PropTypes } from 'react';
 
-class QueryForm extends React.Component {
+class QueryForm extends React.PureComponent {
     constructor(props) {
         super(props);
 
@@ -28,16 +28,11 @@ class QueryForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>
-                    <input
+                    <input type="text" value={this.state.value}
                         onChange={this.handleChange}
-                        type="text"
-                        value={this.state.value}
                     />
                 </label>
-                <input
-                    type="submit"
-                    value="Search now"
-                />
+                <input type="submit" value="Search now" />
             </form>
         );
     }

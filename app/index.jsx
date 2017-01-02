@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Route, Router, browserHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import reducers from './reducers';
 
-import Search from './components/Search';
+import Search from './components/Search.jsx';
 
 const store = createStore(reducers);
 

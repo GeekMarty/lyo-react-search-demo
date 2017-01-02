@@ -1,5 +1,10 @@
 {
-    "extends": ["eslint:all", "plugin:react/all"],
+    "extends": [
+        "eslint:all",
+        "plugin:react/all",
+        "plugin:import/errors",
+        "plugin:import/warnings"
+    ],
     "parserOptions": {
         "ecmaVersion": 6,
         "sourceType": "module",
@@ -10,27 +15,37 @@
     },
     "env": {
         "browser": true,
-        "node": true        
+        "node": true
     },
     "plugins": [
-        "react"
+        "react",
+        "import"
     ],
     "rules" : {
+        // Warnings
         //"no-console": "warn",
         "no-trailing-spaces" : "warn",
+
+        // Errors with options other then Default
         "linebreak-style": ["error", "windows"],
         "quotes": ["error", "single"],
-        "sort-imports": "off",
-        "no-ternary": "off",
         "quote-props": ["error", "as-needed"],
-        "padded-blocks": "off",
-        "one-var": "off",
         "object-curly-spacing": ["error", "always"],
         "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
         "space-before-function-paren": ["error", "never"],
-        "no-magic-numbers": "off",
 
-        "react/require-optimization": "off",
-        "react/prefer-stateless-function": "off"
+        // Disabled rules
+        "no-magic-numbers": "off",
+        "no-ternary": "off",        
+        "one-var": "off",
+        "padded-blocks": "off",
+        "prefer-template": "off",
+        "sort-imports": "off",
+
+        // React - Disabled rules
+        "react/jsx-max-props-per-line": "off",
+        "react/jsx-sort-props": "off",
+        "react/prefer-stateless-function": "off",
+        "react/require-optimization": "off"
     }
 }
