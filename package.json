@@ -23,6 +23,7 @@
     "webpack": "2.2.0-rc.3"
   },
   "scripts": {
+    "dist": "webpack --config webpack.production.config.js",
     "pack": "webpack --progress"
   }
 }

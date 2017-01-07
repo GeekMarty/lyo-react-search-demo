@@ -27,19 +27,21 @@
         "no-trailing-spaces" : "warn",
 
         // Errors with options other then Default
+        "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
         "linebreak-style": ["error", "windows"],
+        "object-curly-spacing": ["error", "always"],
         "quotes": ["error", "single"],
         "quote-props": ["error", "as-needed"],
-        "object-curly-spacing": ["error", "always"],
-        "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
         "space-before-function-paren": ["error", "never"],
 
         // Disabled rules
         "no-magic-numbers": "off",
-        "no-ternary": "off",        
+        "no-ternary": "off",
+        "object-curly-newline": "off",
         "one-var": "off",
         "padded-blocks": "off",
         "prefer-template": "off",
+        "sort-keys": "off",
         "sort-imports": "off",
 
         // React - Disabled rules

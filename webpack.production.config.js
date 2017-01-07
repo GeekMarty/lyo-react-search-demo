@@ -1,10 +1,11 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     entry: './app/index.jsx',
     output: {
         path: path.resolve(__dirname, './wwwroot/js'),
-        filename: 'search.bundle.js'
+        filename: 'search.bundle.min.js'
     },
     module: {
         rules: [
@@ -36,6 +37,19 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production')
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            },
+            output: {
+                comments: false
+            }
+        })
+    ],
     resolve: {
         modules: [
             'node_modules',
@@ -43,13 +57,8 @@ module.exports = {
         ],
         extensions: ['.js', '.json', '.jsx']
     },
-    devtool: 'cheap-eval-source-map',
-    watch: true,
-    watchOptions: {
-        aggregateTimeout: 300
-    },
     performance: {
-        hints: false
+        hints: 'error'
     },
     externals: 'jQuery'
 };
