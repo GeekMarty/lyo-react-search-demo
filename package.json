@@ -23,7 +23,8 @@
     "webpack": "^2.2.1"
   },
   "scripts": {
-    "dist": "webpack --config webpack.production.config.js",
-    "pack": "webpack --progress"
+    "build": "webpack",
+    "build:watch": "webpack --watch --progress",
+    "dist": "webpack --config webpack.production.config.js"
   }
 }

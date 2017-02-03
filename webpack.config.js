@@ -44,7 +44,6 @@ module.exports = {
         extensions: ['.js', '.json', '.jsx']
     },
     devtool: 'cheap-eval-source-map',
-    watch: true,
     watchOptions: {
         aggregateTimeout: 300
     },
