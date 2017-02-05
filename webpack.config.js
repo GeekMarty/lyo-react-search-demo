@@ -1,7 +1,11 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
-    entry: './app/index.jsx',
+    entry: {
+        app: './app/index.jsx',
+        react: ['react', 'react-dom']
+    },
     output: {
         path: path.resolve(__dirname, './wwwroot/js'),
         filename: 'search.bundle.js'
@@ -36,6 +40,17 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'react',
+
+            path: path.resolve(__dirname, './wwwroot/js'),
+
+            filename: 'react.bundle.js',
+
+            minChunks: Infinity
+        })
+    ],
     resolve: {
         modules: [
             'node_modules',
