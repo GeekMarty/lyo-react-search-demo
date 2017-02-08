@@ -22,6 +22,7 @@ class QueryForm extends React.PureComponent {
 
         // Invoke callback when form is submitted
         this.props.changeQuery(this.state.value);
+        this.props.dealQuery(this.state.value);
     }
 
     render() {
@@ -40,7 +41,8 @@ class QueryForm extends React.PureComponent {
 
 QueryForm.propTypes = {
     action: PropTypes.string.isRequired,
-    changeQuery: PropTypes.func.isRequired
+    changeQuery: PropTypes.func.isRequired,
+    dealQuery: PropTypes.func.isRequired
 };
 
 export default QueryForm;

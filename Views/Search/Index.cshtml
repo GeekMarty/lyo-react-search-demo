@@ -2,8 +2,13 @@
     ViewData["Title"] = "Seach";
 }
 
+<script>
+    var searchApp = searchApp || {};
+    searchApp.Urls = searchApp.Urls || {};
+    searchApp.Urls.searchUrl = '@Url.Action("Search", "Search")';
+</script>
+
 <section id="search"></section>
 
 <script src="~/js/react.bundle.js"></script>
 <script src="~/js/search.bundle.js"></script>
-

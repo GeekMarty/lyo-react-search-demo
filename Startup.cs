@@ -1,3 +1,5 @@
+using LyoES;
+using LyoES.EsClientInteraction;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,7 +28,9 @@ namespace WebApplication
         {
             // Add framework services.
             services.AddRouting((routingOptions) => { routingOptions.LowercaseUrls = true; });
-            services.AddMvc();            
+            services.AddMvc();
+            
+            services.AddSingleton<IReaderService, ReaderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -13,7 +13,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.(jsx)?$/,
                 include: [
                     path.resolve(__dirname, 'app')
                 ],
@@ -28,7 +28,8 @@ module.exports = {
                             plugins: ['transform-object-rest-spread']
                         }
                     }
-                ]
+                ],
+                enforce: 'pre'
             },
             {
                 test: /\.jsx?$/,
@@ -37,6 +38,11 @@ module.exports = {
                 ],
                 use: ['eslint-loader'],
                 enforce: 'pre'
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+                enforce: 'post'
             }
         ]
     },
@@ -56,9 +62,9 @@ module.exports = {
             'node_modules',
             path.resolve(__dirname, 'app')
         ],
-        extensions: ['.js', '.json', '.jsx']
+        extensions: ['.js', '.json', '.jsx', '.css']
     },
-    devtool: 'cheap-eval-source-map',
+    devtool: 'source-maps',
     watchOptions: {
         aggregateTimeout: 300
     },

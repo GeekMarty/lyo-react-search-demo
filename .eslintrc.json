@@ -28,11 +28,16 @@
 
         // Errors with options other then Default
         "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
-        "linebreak-style": ["error", "windows"],
+        // "linebreak-style": ["error", "windows"], Macht derzeit unerklärliche Probleme in VS Code
+        "linebreak-style": "off",
         "object-curly-spacing": ["error", "always"],
         "quotes": ["error", "single"],
         "quote-props": ["error", "as-needed"],
         "space-before-function-paren": ["error", "never"],
+        "object-property-newline": "warn",
+        "dot-location": ["warn", "property"],
+
+        "max-len": ["warn", 160],
 
         // Disabled rules
         "no-magic-numbers": "off",
@@ -43,11 +48,23 @@
         "prefer-template": "off",
         "sort-keys": "off",
         "sort-imports": "off",
+        "lines-around-comment": "off",
+        "no-inline-comments": "off",
+        "no-use-before-define": "off",
+        "capitalized-comments": "off",
+        "no-negated-condition": "off",
+        "multiline-ternary": "off",
+        "no-console": "off",
+        "class-methods-use-this": "off",
+        "no-warning-comments": "off",
+        //"line-comment-position": "off",
 
         // React - Disabled rules
         "react/jsx-max-props-per-line": "off",
         "react/jsx-sort-props": "off",
         "react/prefer-stateless-function": "off",
-        "react/require-optimization": "off"
+        "react/require-optimization": "off",
+        "react/require-default-props": "off",
+        "react/no-unused-prop-types": "warn"
     }
 }
